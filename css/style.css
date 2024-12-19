@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(to bottom right, #f9e8e2, #fcded6);
+    overflow-x: hidden;
+}
+
+header {
+    position: relative;
+    text-align: center;
+    color: #5a2d2d;
+    background: url('https://source.unsplash.com/1920x1080/?flowers,romance') no-repeat center;
+    background-size: cover;
+    padding: 50px 20px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.6);
+    z-index: 1;
+}
+
+h1 {
+    position: relative;
+    font-size: 3rem;
+    font-family: 'Great Vibes', cursive;
+    z-index: 2;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+p {
+    position: relative;
+    font-size: 1.2rem;
+    z-index: 2;
+    margin-top: 10px;
+}
+
+nav {
+    position: relative;
+    z-index: 2;
+    margin-top: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #5a2d2d;
+    font-size: 1rem;
+    margin: 0 15px;
+    padding: 8px 12px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    border: 2px solid #5a2d2d;
+    border-radius: 5px;
+    background: #fbeae4;
+}
+
+.book-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.page {
+    width: 60%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none; /* Start with pages hidden */
+    transform: perspective(1000px) rotateY(0deg);
+    transition: transform 1s ease-in-out;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.page.active {
+    display: block; /* Only show the active page */
+}
+
+main {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: #5a2d2d;
+    font-family: 'Playfair Display', serif;
+}
+
+main h2 {
+    font-size: 2.5rem;
+    font-family: 'Great Vibes', cursive;
+    margin-bottom: 20px;
+}
+
+main p {
+    font-family: 'Georgia', serif;
+    text-align: justify;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+blockquote {
+    font-style: italic;
+    border-left: 4px solid #ccc;
+    padding-left: 20px;
+    margin: 1em 0;
+}
+
+
+.texto {
+    text-align: center;
+    font-size: 1.5em;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/*Galeria*******************/
+#gallery {
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+#gallery h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+#gallery p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Garante que as imagens se ajustem ao tamanho da tela */
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;    /* A imagem ocupa toda a largura do contêiner */
+    height: 100%;   /* A imagem ocupa toda a altura do contêiner */
+    object-fit: cover; /* A imagem vai cobrir o contêiner sem distorcer, mas pode ser cortada */
+    display: block;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+
+/*Modal da Galeria*****************/
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.modal-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* Butão do capitulo ********************/
+
+.button-next {
+    display: inline-flexbox;
+    background-color: #0261c7;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    margin-top: 30px;
+    font-size: 16px;
+    width: 16%;
+    transition: background-color 0.3s;
+}
+.button-next:hover {
+    background-color: #0056b3;
+}
+
+.link {
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 10px;
+}
+
+/* Estilos do Rodapé ***********/
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+footer a {
+    color: #ff6347;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* explosão de festões *******/
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff6347;
+    animation: explode 3s linear infinite;
+}
+
+@keyframes explode {
+    0% {
+        transform: translateY(5) rotate(5deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(800px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* musica ***********/
+
+span p {
+    text-align: center;
+    margin-top: -20px;
+
+}
+
+.video-container {
+    position: relative;
+    width: 100%; /* Garante que o vídeo ocupe toda a largura do contêiner */
+    padding-bottom: 56.25%; /* Proporção 16:9 (altura do vídeo baseada na largura) */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Ajuste da navegação para formato de lista em telas pequenas */
+@media (max-width: 768px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        display: block; /* Torna cada item uma linha */
+        margin: 10px 0; /* Espaçamento vertical entre links */
+        font-size: 1rem; /* Ajusta tamanho da fonte */
+    }
+}
+
+/* Ajuste para telas muito pequenas */
+@media (max-width: 480px) {
+    nav a {
+        font-size: 0.9rem; /* Reduz mais o tamanho da fonte */
+        padding: 5px 8px; /* Reduz o padding */
+    }
+}
