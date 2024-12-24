@@ -60,3 +60,8 @@ document.getElementById("playButton").addEventListener("click", function () {
     var src = video.src;
     video.src = src + "?autoplay=1"; // A opção ?autoplay=1 vai fazer o vídeo tocar automaticamente
 });
+
+function toggleMenu() {
+    var navbar = document.getElementById("navbar");
+    navbar.classList.toggle("responsive");
+}

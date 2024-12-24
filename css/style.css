@@ -69,6 +69,71 @@ nav a:hover {
     background: #fbeae4;
 }
 
+/* Barra de navegação */
+/* Estilos da barra de navegação */
+.navbar {
+    position: fixed;
+    font-family: 'Inter', sans-serif;
+    background-color: #bb8181;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: #5a2d2d;
+    padding: 10px;
+    text-align: center;
+    z-index: 100;
+}
+
+.navbar a {
+    color: #5a2d2d;
+    border-radius: 20px;
+    padding: 10px 15px;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.navbar a:hover {
+    background-color: #575757;
+}
+
+/* Menu hambúrguer */
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    color: #5a2d2d;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Estilos para telas pequenas */
+@media screen and (max-width: 768px) {
+    .navbar a {
+        display: none; /* Esconde os links na versão móvel */
+    }
+
+    .navbar.responsive a {
+        display: block; /* Exibe os links quando o menu hambúrguer for ativado */
+        text-align: left;
+    }
+
+    .menu-icon {
+        display: block; /* Exibe o ícone do menu em dispositivos móveis */
+    }
+
+    .navbar.responsive {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background-color: #bb8181;
+        text-align: left;
+        padding: 10px;
+    }
+}
+
+
+
 .book-container {
     display: flex;
     flex-direction: column;
