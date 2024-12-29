@@ -32,6 +32,22 @@
             background-color: rgba(0, 0, 0, 0.5);
             padding: 10px;
         }
+
+        .pause-button {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .pause-button:hover {
+            background: rgba(0, 0, 0, 0.1);
+            /* Torna a sobreposição leve e não azul */
+        }
     </style>
 </head>
 
@@ -53,17 +69,29 @@
 
         <!-- Slideshow -->
         <div class="slideshow-container">
+            <button class="pause-button" onclick="toggleSlideshow()"></button>
             <div class="slide">
-                <img src="img/Casamento1.jpg" alt="Casamento 1" style="width: 100%;">
-                <div class="caption">Este é o momento do nosso casamento.</div>
+                <img src="img/casamento_igreja.jpg" alt="Casamento 1" style="width: 100%;">
+                <div class="caption">"13 de abril de 2019 – O dia em que eu coloquei uma aliança no seu dedo com as
+                    mãos tremendo, mas com o coração cheio de certezas.
+                    Entre risadas suas e meu olhar bobo, começamos nossa história pra valer. Cada foto desse dia me
+                    lembra o quanto sou sortudo por ter você ao meu lado."</div>
             </div>
             <div class="slide">
-                <img src="img/Casamento2.jpg" alt="Casamento 2" style="width: 100%;">
-                <div class="caption">Aqui, comemoramos nossa união.</div>
+                <img src="img/casamento_sogra.jpg" alt="Casamento 2" style="width: 100%;">
+                <div class="caption">"O dia do casamento da sua mãe – e eu não sabia se olhava pra festa ou só pra
+                    você."
+                    Entre danças, risadas e aquele seu vestido rosa, eu percebi de novo o quanto sou apaixonado por
+                    você. Cada foto guarda um pedacinho da noite em que, mais uma vez, você foi a pessoa mais linda do
+                    salão – pelo menos pra mim.</div>
             </div>
             <div class="slide">
-                <img src="img/Casamento3.jpg" alt="Casamento 3" style="width: 100%;">
-                <div class="caption">Uma lembrança inesquecível.</div>
+                <img src="img/momentos_especiais.jpg" alt="Casamento 3" style="width: 100%;">
+                <div class="caption">"Alguns momentos parecem aleatórios, mas com você eles viram memórias que eu nunca
+                    quero esquecer."
+                    Desde brincadeiras bobas até aquele almoço no shopping, cada instante ao seu lado é especial. As
+                    fotos mostram, mas o que eu sinto por você não dá pra capturar – só cresce a cada risada que a gente
+                    compartilha.</div>
             </div>
             <div class="slide">
                 <img src="img/20190619_222511.jpg" alt="Foto 4" style="width: 100%;">
@@ -183,28 +211,34 @@
 
     <script>
         let slideIndex = 0;
+        let slideshowInterval;
+        let isPaused = false;
 
         function showSlides() {
             let slides = document.getElementsByClassName("slide");
-
-            // Oculta todas as imagens
             for (let i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
-
-            // Avança para o próximo slide
             slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1 } // Se atingir o fim, começa novamente
-
-            // Exibe a imagem atual
+            if (slideIndex > slides.length) { slideIndex = 1 }
             slides[slideIndex - 1].style.display = "block";
-
-            // Muda a imagem a cada 3 segundos
-            setTimeout(showSlides, 3000);
         }
 
-        // Inicia o slideshow
+        function startSlideshow() {
+            slideshowInterval = setInterval(showSlides, 3000);
+        }
+
+        function toggleSlideshow() {
+            if (isPaused) {
+                startSlideshow();
+            } else {
+                clearInterval(slideshowInterval);
+            }
+            isPaused = !isPaused;
+        }
+
         showSlides();
+        startSlideshow();
     </script>
 </body>
 
