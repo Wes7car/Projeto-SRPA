@@ -74,18 +74,18 @@ nav a:hover {
 .navbar {
     position: fixed;
     font-family: 'Inter', sans-serif;
-    background-color: #bb8181;
-    top: 0;
+    background-color: #000000;
+    bottom: 0; /* Fixar na parte de baixo */
     left: 0;
     right: 0;
-    color: #5a2d2d;
+    color: #eb8181;
     padding: 10px;
     text-align: center;
     z-index: 100;
 }
 
 .navbar a {
-    color: #5a2d2d;
+    color: #da7878;
     border-radius: 20px;
     padding: 10px 15px;
     text-decoration: none;
@@ -95,6 +95,7 @@ nav a:hover {
 .navbar a:hover {
     background-color: #575757;
 }
+
 
 /* Menu hambúrguer */
 .menu-icon {
