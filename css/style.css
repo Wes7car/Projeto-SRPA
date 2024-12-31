@@ -372,6 +372,7 @@ span p {
 }
 
 .video-container {
+    margin: 20px 0;
     position: relative;
     width: 100%; /* Garante que o vídeo ocupe toda a largura do contêiner */
     padding-bottom: 56.25%; /* Proporção 16:9 (altura do vídeo baseada na largura) */
@@ -385,6 +386,29 @@ span p {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+.music-list {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.music-list li {
+    margin: 10px;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #bb8181;
+    color: white;
+    border-radius: 5px;
+}
+
+.music-list li:hover {
+    background-color: #a66a6a;
+}
+
+.music-lyrics {
+    text-align: center;
 }
 
 
