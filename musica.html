@@ -29,9 +29,11 @@
 
             <!-- Lista de Músicas -->
             <ul class="music-list">
-                <li onclick="showMusic('VID-20160909-WA0024.mp4', 'Cobertor')">Cobertor - Gabi Luthai & Whindersson Nunes (Cover)</li>
-                <li onclick="showMusic('video2.mp4', 'Música 2')">Música 2 - Artista</li>
-                <li onclick="showMusic('video3.mp4', 'Música 3')">Música 3 - Artista</li>
+                <li onclick="showMusic('VID-20160909-WA0024.mp4', 'Cobertor')">Cobertor - Gabi Luthai & Whindersson
+                    Nunes (Cover)</li>
+                <li onclick="showMusic('Jamais Deixarei Você.mp4', 'Jamais deixarei você')">Jamais deixarei você - Bruna
+                    Karla</li>
+                <li onclick="showMusic('VID-20241231-WA0007.mp4', 'Palhacinho')">Palhacinho - Whindersson Nunes</li>
             </ul>
 
             <!-- Área do Vídeo -->
@@ -43,104 +45,11 @@
             </div>
 
             <!-- Letra da Música -->
-            <h2 id="music-title">Letra da Música: Cobertor</h2>
+            <h2 id="music-title">Letra da Música:</h2>
             <div class="music-lyrics" id="lyrics">
-
-                <h4>(Gabi Luthai)</h4>
-                <p>Eu sei que o tempo pode afastar a gente</p>
-                <p>Mas se o tempo afastar a gente</p>
-                <p>É porque o nosso amor é fraco demais</p>
-                <p>E amores fracos não merecem o meu tempo, não mais</p>
-
-                <br>
-
-                <p>Simplesmente eu sei que tudo que foi</p>
-                <p>Importante pra mim</p>
-                <p>Da minha vida se foi</p>
-                <p>Então me fez ser assim</p>
-                <p>Dentro dessa armadura, nessa vida dura</p>
-                <p>Não sou Indiana Jones</p>
-                <p>Então, sem aventura</p>
-
-                <br>
-
-                <p>Porque só tinha conhecido gente louca</p>
-                <p>Tinha medo de um: Eu te amo</p>
-                <p>Sair da minha boca</p>
-                <p>Até que um dia ele saiu</p>
-                <p>Eu gelei, te olhei</p>
-                <p>Você disse: Eu também; e sorriu</p>
-
-                <br>
-
-                <p>Maluco o suficiente pra gostar de mim</p>
-                <p>Corajoso o suficiente pra ir até o fim</p>
-                <p>Se eu tivesse te desenhado e te encomendado</p>
-                <p>Teria feito exatamente assim</p>
-
-                <br>
-
-                <h4>(Refrão)</h4>
-                <p>Ele me disse: Vai</p>
-                <p>Eu disse: Já vou</p>
-                <p>Ele me disse: Volta</p>
-                <p>Eu disse: Ôoo</p>
-                <p>Ai que saudade de você</p>
-                <p>Debaixo do meu cobertor</p>
-                <p>Ai que saudade de você</p>
-                <p>Debaixo do meu cobertor</p>
-
-                <br>
-
-                <h4>(Whinderson Nunes)</h4>
-                <p>Eu sei que sobre nós</p>
-                <p>Tudo é sempre complicado</p>
-                <p>Mas um dia vai se descomplicar, pode acreditar</p>
-                <p>Te dei meu coração, você cuidou tão bem</p>
-                <p>Que agora quero entregar meu corpo pra você também</p>
-
-                <br>
-
-                <p>Vem, me diz se eu tô errado, mina</p>
-                <p>Mas algo me diz que a nossa vibe combina</p>
-                <p>Eu tava ali, procurando o meu rumo pra seguir</p>
-                <p>Que bom quando eu te vi, tava tudo tão chato por aqui</p>
-
-                <br>
-
-                <p>Eterno nada é, posso dizer</p>
-                <p>Mas eu vou fazer o possível pro nosso amor ser</p>
-                <p>Um dia a gente vai se ver bem velhinho pelo espelho</p>
-                <p>E eu cantando outra música pra você</p>
-
-                <br>
-
-                <p>Pois quando a gente se entrega pra vida</p>
-                <p>A vida só nos devolve coisas boas</p>
-                <p>E ela me deu você</p>
-                <p>E eu vi nessa corrida que você é só você</p>
-                <p>E pessoas são pessoas</p>
-
-                <br>
-
-                <h4>(Refrão)</h4>
-                <p>Ele me disse: Vai</p>
-                <p>Eu disse: Já vou</p>
-                <p>Ele me disse: Volta</p>
-                <p>Eu disse: Ôoo</p>
-                <p>Ai que saudade de você</p>
-                <p>Debaixo do meu cobertor</p>
-                <p>Ai que saudade de você</p>
-                <p>Debaixo do meu cobertor</p>
-
-                <br>
-
-                <p>Eu sei que o tempo pode afastar a gente</p>
-                <p>Mas se o tempo afastar a gente</p>
-                <p>É porque o nosso amor é fraco demais</p>
-                <p>E amores fracos não merecem o meu tempo</p>
-
+                <!-- Letra da música -->
             </div>
+
 
         </section>
     </main>
@@ -150,7 +59,179 @@
         <p>&copy; 2024 Sua História. Todos os direitos reservados. | <a href="#sobre.html">Sobre</a></p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script>
+        const lyricsData = {
+            'Cobertor': `
+                <h4>(Gabi Luthai)</h4>
+                <p>Eu sei que o tempo pode afastar a gente</p>
+                <p>Mas se o tempo afastar a gente</p>
+                <p>É porque o nosso amor é fraco demais</p>
+                <p>E amores fracos não merecem o meu tempo, não mais</p>
+                <br>
+                <p>Simplesmente eu sei que tudo que foi</p>
+                <p>Importante pra mim</p>
+                <p>Da minha vida se foi</p>
+                <p>Então me fez ser assim</p>
+                <p>Dentro dessa armadura, nessa vida dura</p>
+                <p>Não sou Indiana Jones</p>
+                <p>Então, sem aventura</p>
+                <br>
+                <p>Porque só tinha conhecido gente louca</p>
+                <p>Tinha medo de um: Eu te amo</p>
+                <p>Sair da minha boca</p>
+                <p>Até que um dia ele saiu</p>
+                <p>Eu gelei, te olhei</p>
+                <p>Você disse: Eu também; e sorriu</p>
+                <br>
+                <p>Maluco o suficiente pra gostar de mim</p>
+                <p>Corajoso o suficiente pra ir até o fim</p>
+                <p>Se eu tivesse te desenhado e te encomendado</p>
+                <p>Teria feito exatamente assim</p>
+                <br>
+                <h4>(Refrão)</h4>
+                <p>Ele me disse: Vai</p>
+                <p>Eu disse: Já vou</p>
+                <p>Ele me disse: Volta</p>
+                <p>Eu disse: Ôoo</p>
+                <p>Ai que saudade de você</p>
+                <p>Debaixo do meu cobertor</p>
+                <p>Ai que saudade de você</p>
+                <p>Debaixo do meu cobertor</p>
+                <br>
+                <h4>(Whinderson Nunes)</h4>
+                <p>Eu sei que sobre nós</p>
+                <p>Tudo é sempre complicado</p>
+                <p>Mas um dia vai se descomplicar, pode acreditar</p>
+                <p>Te dei meu coração, você cuidou tão bem</p>
+                <p>Que agora quero entregar meu corpo pra você também</p>
+                <br>
+                <p>Vem, me diz se eu tô errado, mina</p>
+                <p>Mas algo me diz que a nossa vibe combina</p>
+                <p>Eu tava ali, procurando o meu rumo pra seguir</p>
+                <p>Que bom quando eu te vi, tava tudo tão chato por aqui</p>
+                <br>
+                <p>Eterno nada é, posso dizer</p>
+                <p>Mas eu vou fazer o possível pro nosso amor ser</p>
+                <p>Um dia a gente vai se ver bem velhinho pelo espelho</p>
+                <p>E eu cantando outra música pra você</p>
+                <br>
+                <p>Pois quando a gente se entrega pra vida</p>
+                <p>A vida só nos devolve coisas boas</p>
+                <p>E ela me deu você</p>
+                <p>E eu vi nessa corrida que você é só você</p>
+                <p>E pessoas são pessoas</p>
+                <br>
+                <h4>(Refrão)</h4>
+                <p>Ele me disse: Vai</p>
+                <p>Eu disse: Já vou</p>
+                <p>Ele me disse: Volta</p>
+                <p>Eu disse: Ôoo</p>
+                <p>Ai que saudade de você</p>
+                <p>Debaixo do meu cobertor</p>
+                <p>Ai que saudade de você</p>
+                <p>Debaixo do meu cobertor</p>
+                <br>
+                <p>Eu sei que o tempo pode afastar a gente</p>
+                <p>Mas se o tempo afastar a gente</p>
+                <p>É porque o nosso amor é fraco demais</p>
+                <p>E amores fracos não merecem o meu tempo</p>`,
+
+            'Jamais deixarei você': `
+                <h4>(Bruna Karla)</h4>
+                <p>Olha pra mim, você já sabe</p>
+                <p>O que eu sinto não é mais um segredo</p>
+                <p>Eu sempre quis alguém assim</p>
+                <p>Pra me amar e cuidar de mim</p>
+                <br>
+                <p>Eu prometo, vou te retribuir</p>
+                <p>Tudo aquilo que tem feito por mim</p>
+                <p>Ah, eu prometo te fazer mais feliz</p>
+                <p>E ser tudo que você sempre quis</p>
+                <br>
+                <h4>(Refrão)</h4>
+                <p>Quando você chorar</p>
+                <p>Eu vou estar aqui pra te abraçar</p>
+                <p>Palavras nem sempre vão adiantar</p>
+                <p>Mas você verá escrito no meu olhar</p>
+                <p>Amor, jamais deixarei você</p>
+                <br>
+                <p>Olha pra mim, você já sabe</p>
+                <p>O que eu sinto não é mais um segredo</p>
+                <p>Eu sempre quis alguém assim</p>
+                <p>Pra me amar e cuidar de mim</p>
+                <br>
+                <p>Eu prometo, vou te retribuir</p>
+                <p>Tudo aquilo que tem feito por mim</p>
+                <p>Ah, eu prometo te fazer mais feliz</p>
+                <p>E ser tudo que você sempre quis</p>
+                <br>
+                <h4>(Refrão)</h4>
+                <p>Quando você chorar</p>
+                <p>Eu vou estar aqui pra te abraçar</p>
+                <p>Palavras nem sempre vão adiantar</p>
+                <p>Mas você verá escrito no meu olhar</p>
+                <p>Amor, jamais deixarei você</p>
+                <br>
+                <p>Foi difícil chegar até aqui</p>
+                <p>Mas você sempre me fazia sorrir</p>
+                <p>Segurava a minha mão dizendo</p>
+                <p>Deus conosco está</p>
+                <p>E o nosso amor resistirá</p>
+                <br>
+                <h4>(Refrão)</h4>
+                <p>Quando você chorar</p>
+                <p>Eu vou estar aqui pra te abraçar</p>
+                <p>Palavras nem sempre vão adiantar</p>
+                <p>Mas você verá escrito no meu olhar</p>
+                <br>
+                <p>Olha pra mim, leia em meus olhos</p>
+                <p>Jamais deixarei você</p>`,
+
+            'Palhacinho': `
+                <h4>(Whindersson Nunes)</h4>
+                <p>Esse amor que nasceu em mim</p>
+                <p>Parece até coisa de filme mas não é, é assim</p>
+                <p>Você resgatou o que teve um fim</p>
+                <p>Fez meu coração bater de um jeito diferente dentro de mim</p>
+                <br>
+                <p>Talvez seja o jeito que você joga o cabelo</p>
+                <p>Ou o jeito que você sorri quando eu tô perto</p>
+                <br>
+                <p>Eu não sei se é o jeito de você caminhar</p>
+                <p>Eu só sei que é você que eu quero</p>
+                <br>
+                <p>Não é fácil assim, você daí</p>
+                <p>E eu daqui te amando por wi-fi</p>
+                <p>Não é fácil assim, mas mesmo daí e eu daqui</p>
+                <p>Eu sinto uma vontade de largar tudo e correr ter você pra mim</p>
+                <br>
+                <p>Para e deixa eu olhar pra você um pouco</p>
+                <p>Você fica tão linda com esse batom</p>
+                <p>Deixa eu saber se teu lábio é macio</p>
+                <p>E saber se o teu beijo é tão bom</p>
+                <br>
+                <p>Fico tão feliz quando você ri de mim</p>
+                <p>Fica meio difícil de entender</p>
+                <p>Eu sou só um palhacinho querendo alguém pra fazer rir</p>
+                <p>E esse alguém que eu quero é você</p>
+                <br>
+                <p>Eu quero é você</p>`
+        };
+
+        function showMusic(videoFile, musicTitle) {
+            // Altera o vídeo
+            const video = document.getElementById('music-video');
+            video.src = `videos/${videoFile}`;
+            video.play();
+
+            // Atualiza o título da música
+            document.getElementById('music-title').innerText = `Letra da Música: ${musicTitle}`;
+
+            // Substitui a letra anterior pela nova
+            const lyricsContainer = document.getElementById('lyrics');
+            lyricsContainer.innerHTML = lyricsData[musicTitle] || '<p>Letra não disponível</p>';
+        }
+    </script>
 
 </body>
 
