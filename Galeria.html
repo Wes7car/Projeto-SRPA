@@ -86,6 +86,13 @@
         </div>
     </main>
 
+    <div class="fullscreen-overlay" id="fullscreenOverlay">
+        <span class="close-btn" onclick="closeFullscreen()">&times;</span>
+        <img class="fullscreen-img" id="fullscreenImg" src="">
+        <div class="nav-arrow nav-left" onclick="prevSlide()">&#10094;</div>
+        <div class="nav-arrow nav-right" onclick="nextSlide()">&#10095;</div>
+    </div>
+
     <!-- Rodapé -->
     <footer>
         <p>&copy; 2024 Sua História. Todos os direitos reservados. | <a href="#sobre.html">Sobre</a></p>
@@ -120,6 +127,37 @@
 
         showSlides();
         startSlideshow();
+
+        let thumbnails = document.getElementsByClassName("thumbnail");
+        let fullscreenOverlay = document.getElementById("fullscreenOverlay");
+        let fullscreenImg = document.getElementById("fullscreenImg");
+        let currentIndex = 0;
+
+        for (let i = 0; i < thumbnails.length; i++) {
+            thumbnails[i].addEventListener("click", function () {
+                openFullscreen(thumbnails[i].src, i);
+            });
+        }
+
+        function openFullscreen(src, index) {
+            fullscreenImg.src = src;
+            fullscreenOverlay.style.display = "flex";
+            currentIndex = index;
+        }
+
+        function closeFullscreen() {
+            fullscreenOverlay.style.display = "none";
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % thumbnails.length;
+            fullscreenImg.src = thumbnails[currentIndex].src;
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
+            fullscreenImg.src = thumbnails[currentIndex].src;
+        }
     </script>
 </body>
 
