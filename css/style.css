@@ -444,21 +444,45 @@ span p {
     overflow: hidden;
 }
 
+/* Estilo básico para o texto dentro dos slides */
 .slide {
-    display: none;
-    width: 100%;
-    height: auto;
+    position: relative;
 }
 
 .caption {
     position: absolute;
-    bottom: 10px;
-    left: 20px;
+    bottom: 10%;
+    left: 10%;
+    right: 10%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para o texto */
     color: white;
-    font-size: 18px;
-    background-color: rgba(0, 0, 0, 0.5);
     padding: 10px;
+    font-size: 1.2rem; /* Tamanho padrão do texto */
+    line-height: 1.4;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    max-width: 90%;
 }
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .caption {
+        font-size: 1rem; /* Reduz o tamanho da fonte em telas médias (tablets) */
+        padding: 8px;
+        bottom: 8%; /* Ajusta a posição do texto */
+    }
+}
+
+/* Responsividade para telas pequenas (celulares) */
+@media (max-width: 480px) {
+    .caption {
+        font-size: 0.9rem; /* Reduz ainda mais o tamanho da fonte em celulares */
+        padding: 6px;
+        bottom: 5%; /* Ajusta a posição do texto */
+    }
+}
+
 
 .pause-button {
     position: absolute;
@@ -478,20 +502,37 @@ span p {
 
 .thumbnail-container {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
     margin-top: 20px;
 }
+
 .thumbnail {
-    width: 200px;
-    height: 200px;
-    margin: 5px;
-    cursor: pointer;
-    opacity: 0.7;
+    width: 100%;
+    max-width: 150px; /* Tamanho máximo de cada imagem */
+    height: auto;
+    transition: transform 0.3s ease;
 }
+
 .thumbnail:hover {
-    opacity: 1;
+    transform: scale(1.1); /* Um efeito simples para ampliar a imagem ao passar o mouse */
 }
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+    .thumbnail {
+        max-width: 100px; /* Diminui o tamanho da miniatura em telas menores */
+    }
+}
+
+/* Responsividade para telas muito pequenas (como celulares em modo retrato) */
+@media (max-width: 480px) {
+    .thumbnail {
+        max-width: 80px; /* Reduz ainda mais as miniaturas */
+    }
+}
+
 
 .story {
     text-align: center;
