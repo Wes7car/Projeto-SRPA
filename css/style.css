@@ -28,7 +28,11 @@ header::after {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.6);
+    background-image: url(../img/Capa.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 30%;
     z-index: 1;
 }
 
