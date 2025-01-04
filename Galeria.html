@@ -24,35 +24,43 @@
     <!-- Seção da Galeria -->
     <main id="gallery">
         <h1>Galeria de Fotos</h1>
-        <p>Reviva os momentos especiais da nossa história com essas fotos.</p>
+        <h1>Reviva os momentos especiais da nossa história</h1>
+
+        <p>Com essas fotos, queremos lembrar de momentos que marcaram nossa jornada.</p>
 
         <!-- Slideshow -->
-        <div class="slideshow-container">
-            <button class="pause-button" onclick="toggleSlideshow()"></button>
-            <div class="slide">
-                <img src="img/casamento_igreja.jpg" alt="imagem 1" style="width: 100%;">
-                <div class="caption">"13 de abril de 2019, o dia em que coloquei a aliança no seu dedo, com o coração
-                    cheio de certezas e a sorte de ter você ao meu lado."</div>
-            </div>
-            <div class="slide">
-                <img src="img/casamento_sogra.jpg" alt="imagem 2" style="width: 100%;">
-                <div class="caption">"O dia do casamento da sua mãe, onde, entre danças e risadas, percebi novamente o
-                    quanto sou apaixonado por você."</div>
-            </div>
-            <div class="slide">
-                <img src="img/Momento Especial (1).jpg" alt="imagem 3" style="width: 100%;">
-                <div class="caption"> "Um dia inesquecível no Nicolândia, repleto de alegria e momentos especiais."</div>
-            </div>
-            <div class="slide">
-                <img src="img/Momento Especial (2).jpg" alt="imagem 4" style="width: 100%;">
-                <div class="caption">"Momentos simples com você se transformam em memórias inesquecíveis."</div>
-            </div>
-            <div class="slide">
-                <img src="img/Momento Especial (3).jpg" alt="imagem 5" style="width: 100%;">
-                <div class="caption">Um sorriso que vale mais que mil palavras.</div>
-            </div>
-        </div>
+        <div class="slideshow-container" id="slideshow">
+            <button class="pause-button" id="pauseButton" onclick="toggleSlideshow()">❚❚</button>
 
+            <div class="slide active">
+                <img src="img/casamento_igreja.jpg" alt="imagem 1">
+                <p>"13 de abril de 2019, o dia em que coloquei a aliança no seu dedo, com o coração cheio de certezas e
+                    a sorte de ter você ao meu lado."</p>
+            </div>
+            <div class="slide">
+                <img src="img/casamento_sogra.jpg" alt="imagem 2">
+                <p>"O dia do casamento da sua mãe, onde, entre danças e risadas, percebi novamente o quanto sou
+                    apaixonado por você."</p>
+            </div>
+            <div class="slide">
+                <img src="img/Momento Especial (1).jpg" alt="imagem 3">
+                <p>"Um dia inesquecível no Nicolândia, repleto de alegria e momentos especiais."</p>
+            </div>
+            <div class="slide">
+                <img src="img/Momento Especial (2).jpg" alt="imagem 4">
+                <p>"Momentos simples com você se transformam em memórias inesquecíveis."</p>
+            </div>
+            <div class="slide">
+                <img src="img/Momento Especial (3).jpg" alt="imagem 5">
+                <p>Um sorriso que vale mais que mil palavras.</p>
+            </div>
+
+            <button class="prev" onclick="moveSlide(-1)">❮</button>
+            <button class="next" onclick="moveSlide(1)">❯</button>
+        </div>
+        <br>
+        <br>
+        <br>
         <!-- História -->
         <div class="story">
             <p>Nossa história começou como uma amizade sincera e cheia de momentos especiais. Ao longo do tempo, essa
@@ -180,33 +188,58 @@
 
     <script>
         let slideIndex = 0;
-        let slides = document.getElementsByClassName("slide");
-        let slideshowInterval;
-
-        function showSlides() {
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1; }
-            slides[slideIndex - 1].style.display = "block";
-        }
+        let slides = document.querySelectorAll(".slide");
+        let isPlaying = true;
+        let slideInterval;
 
         function showSlide(n) {
-            clearInterval(slideshowInterval);
-            slideIndex = n;
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
+            if (n >= slides.length) {
+                slideIndex = 0;
             }
-            slides[slideIndex - 1].style.display = "block";
+            if (n < 0) {
+                slideIndex = slides.length - 1;
+            }
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+            slides[slideIndex].classList.add("active");
         }
 
-        function startSlideshow() {
-            slideshowInterval = setInterval(showSlides, 3000);
+        function nextSlide() {
+            slideIndex++;
+            showSlide(slideIndex);
         }
 
-        showSlides();
-        startSlideshow();
+        function prevSlide() {
+            slideIndex--;
+            showSlide(slideIndex);
+        }
+
+        function toggleSlideshow() {
+            if (isPlaying) {
+                clearInterval(slideInterval); // Para o slideshow
+                document.getElementById("pauseButton").innerText = "▶️"; // Muda para o ícone de play
+            } else {
+                slideInterval = setInterval(nextSlide, 3000); // Reinicia o slideshow
+                document.getElementById("pauseButton").innerText = "❚❚"; // Muda para o ícone de pausa
+            }
+            isPlaying = !isPlaying; // Alterna o estado de reprodução
+        }
+
+        function moveSlide(direction) {
+            if (direction === 1) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+        }
+
+        // Inicia o slideshow automático
+        slideInterval = setInterval(nextSlide, 3000);
+
+        // Exibe o primeiro slide inicialmente
+        showSlide(slideIndex);
+
 
         let thumbnails = document.getElementsByClassName("thumbnail");
         let fullscreenOverlay = document.getElementById("fullscreenOverlay");
@@ -227,16 +260,6 @@
 
         function closeFullscreen() {
             fullscreenOverlay.style.display = "none";
-        }
-
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % thumbnails.length;
-            fullscreenImg.src = thumbnails[currentIndex].src;
-        }
-
-        function prevSlide() {
-            currentIndex = (currentIndex - 1 + thumbnails.length) % thumbnails.length;
-            fullscreenImg.src = thumbnails[currentIndex].src;
         }
     </script>
 </body>

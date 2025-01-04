@@ -461,16 +461,43 @@ span p {
 
 /* Estilos básicos para o slideshow */
 .slideshow-container {
-    width: 100%;
-    max-width: 800px;
-    margin: auto;
     position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.5); /* Fundo transparente */
+    border-radius: 10px;
     overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 /* Estilo básico para o texto dentro dos slides */
 .slide {
+    display: none;
     position: relative;
+    width: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    border-bottom: 3px solid #fff;
+}
+
+.slide p {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background-color: rgb(255, 255, 255);
+    opacity: 80%;
+    font-size: 1.5rem;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.active {
+    display: block;
 }
 
 .caption {
@@ -508,20 +535,50 @@ span p {
 }
 
 
+/* Controle de pausa e play */
 .pause-button {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 10px;
+    right: 10px;
     background: transparent;
-    border: none;
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 10px;
     cursor: pointer;
+    color: white;
+    font-size: 1.5rem;
+    z-index: 1000;
 }
 
 .pause-button:hover {
-    background: rgba(0, 0, 0, 0.1);
-    /* Torna a sobreposição leve e não azul */
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo das setas (não visíveis, mas funcionais) */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .thumbnail-container {
@@ -534,9 +591,11 @@ span p {
 
 .thumbnail {
     width: 100%;
-    max-width: 150px; /* Tamanho máximo de cada imagem */
+    max-width: 100px; /* Tamanho máximo de cada imagem */
     height: auto;
+    border-bottom: 3px solid #fff;
     transition: transform 0.3s ease;
+    
 }
 
 .thumbnail:hover {
