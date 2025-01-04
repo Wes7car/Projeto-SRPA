@@ -39,10 +39,11 @@
 
             <!-- Área do Vídeo -->
             <div class="video-container">
-                <video id="music-video" width="600" controls>
-                    <source src="videos/VID-20160909-WA0024.mp4" type="video/mp4">
-                    Seu navegador não suporta vídeos.
+                <video id="music-video" controls>
+                    <source src="seu-video.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeo.
                 </video>
+                <button id="fullscreenBtn" onclick="toggleFullscreen()">Tela Cheia</button>
             </div>
 
             <!-- Letra da Música -->
@@ -312,6 +313,27 @@
             const nextMusic = playlist[currentIndex];
             showMusic(nextMusic.video, nextMusic.title);
         }
+
+        function toggleFullscreen() {
+            const video = document.getElementById('music-video');
+
+            if (!document.fullscreenElement) {
+                if (video.requestFullscreen) {
+                    video.requestFullscreen();
+                } else if (video.mozRequestFullScreen) { /* Firefox */
+                    video.mozRequestFullScreen();
+                } else if (video.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+                    video.webkitRequestFullscreen();
+                } else if (video.msRequestFullscreen) { /* IE/Edge */
+                    video.msRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
+
     </script>
 
 </body>
