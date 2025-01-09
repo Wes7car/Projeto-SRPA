@@ -79,7 +79,8 @@ nav a:hover {
     position: fixed;
     font-family: 'Inter', sans-serif;
     background-color: #000000;
-    bottom: 0; /* Fixar na parte de baixo */
+    bottom: 0;
+    /* Fixar na parte de baixo */
     left: 0;
     right: 0;
     color: #eb8181;
@@ -113,16 +114,19 @@ nav a:hover {
 /* Estilos para telas pequenas */
 @media screen and (max-width: 768px) {
     .navbar a {
-        display: none; /* Esconde os links na versão móvel */
+        display: none;
+        /* Esconde os links na versão móvel */
     }
 
     .navbar.responsive a {
-        display: block; /* Exibe os links quando o menu hambúrguer for ativado */
+        display: block;
+        /* Exibe os links quando o menu hambúrguer for ativado */
         text-align: left;
     }
 
     .menu-icon {
-        display: block; /* Exibe o ícone do menu em dispositivos móveis */
+        display: block;
+        /* Exibe o ícone do menu em dispositivos móveis */
     }
 
     .navbar.responsive {
@@ -155,7 +159,8 @@ nav a:hover {
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: none; /* Start with pages hidden */
+    display: none;
+    /* Start with pages hidden */
     transform: perspective(1000px) rotateY(0deg);
     transition: transform 1s ease-in-out;
 }
@@ -175,7 +180,8 @@ button:hover {
 }
 
 .page.active {
-    display: block; /* Only show the active page */
+    display: block;
+    /* Only show the active page */
 }
 
 main {
@@ -234,7 +240,8 @@ blockquote {
 
 .gallery-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Garante que as imagens se ajustem ao tamanho da tela */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* Garante que as imagens se ajustem ao tamanho da tela */
     gap: 20px;
     max-width: 1000px;
     margin: 0 auto;
@@ -250,9 +257,12 @@ blockquote {
 }
 
 .gallery-item img {
-    width: 100%;    /* A imagem ocupa toda a largura do contêiner */
-    height: 100%;   /* A imagem ocupa toda a altura do contêiner */
-    object-fit: cover; /* A imagem vai cobrir o contêiner sem distorcer, mas pode ser cortada */
+    width: 100%;
+    /* A imagem ocupa toda a largura do contêiner */
+    height: 100%;
+    /* A imagem ocupa toda a altura do contêiner */
+    object-fit: cover;
+    /* A imagem vai cobrir o contêiner sem distorcer, mas pode ser cortada */
     display: block;
     border-radius: 10px;
     transition: transform 0.3s ease;
@@ -318,6 +328,7 @@ blockquote {
     width: 16%;
     transition: background-color 0.3s;
 }
+
 .button-next:hover {
     background-color: #0056b3;
 }
@@ -338,10 +349,12 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
 footer a {
     color: #ff6347;
     text-decoration: none;
 }
+
 footer a:hover {
     text-decoration: underline;
 }
@@ -360,6 +373,7 @@ footer a:hover {
         transform: translateY(5) rotate(5deg);
         opacity: 1;
     }
+
     100% {
         transform: translateY(800px) rotate(360deg);
         opacity: 0;
@@ -377,16 +391,17 @@ span p {
 .video-container {
     position: relative;
     width: 100%;
-    max-width: 800px; /* ou qualquer outro limite */
+    max-width: 800px;
+    /* ou qualquer outro limite */
     margin: auto;
-  }
-  
-  video {
+}
+
+video {
     width: 100%;
     height: auto;
-  }
-  
-  #fullscreenBtn {
+}
+
+#fullscreenBtn {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -397,12 +412,12 @@ span p {
     cursor: pointer;
     font-size: 14px;
     border-radius: 5px;
-  }
-  
-  #fullscreenBtn:hover {
+}
+
+#fullscreenBtn:hover {
     background-color: #555;
-  }
-  
+}
+
 
 .video-container iframe {
     position: absolute;
@@ -445,17 +460,22 @@ span p {
     }
 
     nav a {
-        display: block; /* Torna cada item uma linha */
-        margin: 10px 0; /* Espaçamento vertical entre links */
-        font-size: 1rem; /* Ajusta tamanho da fonte */
+        display: block;
+        /* Torna cada item uma linha */
+        margin: 10px 0;
+        /* Espaçamento vertical entre links */
+        font-size: 1rem;
+        /* Ajusta tamanho da fonte */
     }
 }
 
 /* Ajuste para telas muito pequenas */
 @media (max-width: 480px) {
     nav a {
-        font-size: 0.9rem; /* Reduz mais o tamanho da fonte */
-        padding: 5px 8px; /* Reduz o padding */
+        font-size: 0.9rem;
+        /* Reduz mais o tamanho da fonte */
+        padding: 5px 8px;
+        /* Reduz o padding */
     }
 }
 
@@ -465,7 +485,8 @@ span p {
     width: 100%;
     max-width: 1000px;
     margin: auto;
-    background: rgba(0, 0, 0, 0.5); /* Fundo transparente */
+    background: rgba(0, 0, 0, 0.5);
+    /* Fundo transparente */
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
@@ -505,10 +526,12 @@ span p {
     bottom: 10%;
     left: 10%;
     right: 10%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para o texto */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fundo semi-transparente para o texto */
     color: white;
     padding: 10px;
-    font-size: 1.2rem; /* Tamanho padrão do texto */
+    font-size: 1.2rem;
+    /* Tamanho padrão do texto */
     line-height: 1.4;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -519,18 +542,22 @@ span p {
 /* Responsividade para telas menores */
 @media (max-width: 768px) {
     .caption {
-        font-size: 1rem; /* Reduz o tamanho da fonte em telas médias (tablets) */
+        font-size: 1rem;
+        /* Reduz o tamanho da fonte em telas médias (tablets) */
         padding: 8px;
-        bottom: 8%; /* Ajusta a posição do texto */
+        bottom: 8%;
+        /* Ajusta a posição do texto */
     }
 }
 
 /* Responsividade para telas pequenas (celulares) */
 @media (max-width: 480px) {
     .caption {
-        font-size: 0.9rem; /* Reduz ainda mais o tamanho da fonte em celulares */
+        font-size: 0.9rem;
+        /* Reduz ainda mais o tamanho da fonte em celulares */
         padding: 6px;
-        bottom: 5%; /* Ajusta a posição do texto */
+        bottom: 5%;
+        /* Ajusta a posição do texto */
     }
 }
 
@@ -555,7 +582,8 @@ span p {
 }
 
 /* Estilo das setas (não visíveis, mas funcionais) */
-.prev, .next {
+.prev,
+.next {
     position: absolute;
     top: 50%;
     padding: 16px;
@@ -577,7 +605,8 @@ span p {
     right: 0;
 }
 
-.prev:hover, .next:hover {
+.prev:hover,
+.next:hover {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
@@ -591,28 +620,32 @@ span p {
 
 .thumbnail {
     width: 100%;
-    max-width: 100px; /* Tamanho máximo de cada imagem */
+    max-width: 100px;
+    /* Tamanho máximo de cada imagem */
     height: auto;
     border-bottom: 3px solid #fff;
     transition: transform 0.3s ease;
-    
+
 }
 
 .thumbnail:hover {
-    transform: scale(1.1); /* Um efeito simples para ampliar a imagem ao passar o mouse */
+    transform: scale(1.1);
+    /* Um efeito simples para ampliar a imagem ao passar o mouse */
 }
 
 /* Responsividade para telas pequenas */
 @media (max-width: 768px) {
     .thumbnail {
-        max-width: 100px; /* Diminui o tamanho da miniatura em telas menores */
+        max-width: 100px;
+        /* Diminui o tamanho da miniatura em telas menores */
     }
 }
 
 /* Responsividade para telas muito pequenas (como celulares em modo retrato) */
 @media (max-width: 480px) {
     .thumbnail {
-        max-width: 80px; /* Reduz ainda mais as miniaturas */
+        max-width: 80px;
+        /* Reduz ainda mais as miniaturas */
     }
 }
 
@@ -636,10 +669,12 @@ span p {
     align-items: center;
     z-index: 1000;
 }
+
 .fullscreen-img {
     max-width: 90%;
     max-height: 90%;
 }
+
 .close-btn {
     position: absolute;
     top: 20px;
@@ -648,6 +683,7 @@ span p {
     color: white;
     cursor: pointer;
 }
+
 .nav-arrow {
     position: absolute;
     top: 50%;
@@ -655,9 +691,33 @@ span p {
     color: white;
     cursor: pointer;
 }
+
 .nav-left {
     left: 20px;
 }
+
 .nav-right {
     right: 20px;
+}
+
+/* formatação dos botões de áudio******/
+.audio-player {
+    margin-top: 30px;
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #5a2d2d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
 }
