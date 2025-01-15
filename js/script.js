@@ -66,7 +66,7 @@ function toggleMenu() {
     navbar.classList.toggle("responsive");
 }
 
-// Função para reproduzir a historia
+// Função para reproduzir a história
 let utterance;
 let isPlaying = false;
 let isPaused = false;
@@ -78,12 +78,12 @@ function playTexto() {
 
     // Ajustando propriedades para uma leitura mais suave e natural
     utterance.rate = 1.3; // Velocidade (padrão: 1, pode ser ajustado)
-    utterance.pitch = 10; // Tom (padrão: 1)
+    utterance.pitch = 0.8; // Tom (padrão: 1, ajustado para um tom mais grave)
     utterance.volume = 1; // Volume (padrão: 1)
 
-    // Usando uma voz mais suave
+    // Usando uma voz masculina mais grave
     let voices = speechSynthesis.getVoices();
-    utterance.voice = voices.find(voice => voice.lang === 'pt-BR'); // Seleciona voz em português do Brasil
+    utterance.voice = voices.find(voice => voice.lang === 'pt-BR' && voice.name.toLowerCase().includes('mário')); // Ajuste para selecionar uma voz masculina (pode variar conforme as vozes disponíveis)
 
     // Se a leitura foi pausada, retoma de onde parou
     if (isPaused) {
