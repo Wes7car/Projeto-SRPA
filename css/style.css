@@ -359,27 +359,6 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* explosão de festões *******/
-.confetti {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: #ff6347;
-    animation: explode 3s linear infinite;
-}
-
-@keyframes explode {
-    0% {
-        transform: translateY(5) rotate(5deg);
-        opacity: 1;
-    }
-
-    100% {
-        transform: translateY(800px) rotate(360deg);
-        opacity: 0;
-    }
-}
-
 /* musica ***********/
 
 span p {
