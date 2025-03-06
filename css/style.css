@@ -540,6 +540,13 @@ video {
     }
 }
 
+/* Contador cronologico*/
+
+#contador {
+    font-size: 1.5em;
+    font-family: cursive;
+}
+
 
 /* Controle de pausa e play */
 .pause-button {
@@ -599,10 +606,10 @@ video {
 
 .thumbnail {
     width: 100%;
-    max-width: 30%;
+    max-width: 20%;
     /* Tamanho máximo de cada imagem */
     height: auto;
-    border-radius: 10%;
+    border-radius: 100%;
     transition: transform 0.3s ease;
 
 }
