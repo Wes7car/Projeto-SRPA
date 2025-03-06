@@ -485,12 +485,12 @@ video {
 }
 
 .slide p {
-    position: absolute;
+    position: static;
     bottom: 20px;
     left: 20px;
     right: 20px;
     background-color: rgb(255, 255, 255);
-    opacity: 80%;
+    opacity: 70%;
     font-size: 1.5rem;
     padding: 10px;
     border-radius: 5px;
