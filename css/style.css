@@ -3,7 +3,7 @@
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(to bottom right, #f9e8e2, #fcded6);
+    background: linear-gradient(to bottom right, #dacece, #f55327);
     overflow-x: hidden;
 }
 
@@ -224,7 +224,7 @@ blockquote {
 #gallery {
     text-align: center;
     padding: 20px;
-    background-color: #f9f9f9;
+    background: linear-gradient(to bottom right, #fdfdfd, #911f00);;
 }
 
 #gallery h1 {
@@ -599,16 +599,16 @@ video {
 
 .thumbnail {
     width: 100%;
-    max-width: 100px;
+    max-width: 30%;
     /* Tamanho máximo de cada imagem */
     height: auto;
-    border-bottom: 3px solid #fff;
+    border-radius: 10%;
     transition: transform 0.3s ease;
 
 }
 
 .thumbnail:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
     /* Um efeito simples para ampliar a imagem ao passar o mouse */
 }
 

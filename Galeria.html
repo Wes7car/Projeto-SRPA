@@ -28,6 +28,10 @@
 
         <p>Com essas fotos, queremos lembrar de momentos que marcaram nossa jornada.</p>
 
+        <h1>Estamos juntos há:</h1>
+        <div id="contador">Calculando...</div>
+        <br><br>
+
         <!-- Slideshow -->
         <div class="slideshow-container" id="slideshow">
             <button class="pause-button" id="pauseButton" onclick="toggleSlideshow()">❚❚</button>
@@ -267,6 +271,57 @@
         function closeFullscreen() {
             fullscreenOverlay.style.display = "none";
         }
+
+
+        // Data de início do relacionamento (Ajuste para a sua data)
+        const dataInicio = new Date("2016-10-19T21:00:00"); // Exemplo: 5 de março de 2020
+
+        function atualizarContador() {
+            const agora = new Date();
+            let anos = agora.getFullYear() - dataInicio.getFullYear();
+            let meses = agora.getMonth() - dataInicio.getMonth();
+            let dias = agora.getDate() - dataInicio.getDate();
+            let horas = agora.getHours() - dataInicio.getHours();
+            let minutos = agora.getMinutes() - dataInicio.getMinutes();
+            let segundos = agora.getSeconds() - dataInicio.getSeconds();
+
+            // Ajustar para quando o dia do mês for negativo
+            if (dias < 0) {
+                meses--;
+                let ultimoMes = new Date(agora.getFullYear(), agora.getMonth(), 0);
+                dias += ultimoMes.getDate();
+            }
+
+            // Ajustar para quando o mês for negativo
+            if (meses < 0) {
+                anos--;
+                meses += 12;
+            }
+
+            // Ajuste de horas, minutos e segundos
+            if (segundos < 0) {
+                segundos += 60;
+                minutos--;
+            }
+            if (minutos < 0) {
+                minutos += 60;
+                horas--;
+            }
+            if (horas < 0) {
+                horas += 24;
+                dias--;
+            }
+
+            // Exibir no HTML
+            document.getElementById("contador").innerHTML =
+                `${anos} anos, ${meses} meses, ${dias} dias, ${horas}h ${minutos}m ${segundos}s`;
+        }
+
+        // Atualizar a cada segundo
+        setInterval(atualizarContador, 1000);
+
+        // Inicializar imediatamente
+        atualizarContador();
     </script>
 </body>
 
